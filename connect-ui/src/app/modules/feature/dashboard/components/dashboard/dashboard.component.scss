@@ -1,0 +1,93 @@
+.dashboard-modules {
+  text-align: center;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+  .icon {
+      color: #fff;
+      opacity: 0.2;
+      position: absolute;
+      bottom: 16px;
+      right: 10px;
+      font-size: 65px;
+  }
+}
+
+.dashboard .col-md-3:nth-child(1) .dashboard-modules {
+  background-color: #3798dc;
+}
+
+.dashboard .col-md-3:nth-child(2) .dashboard-modules {
+  background-color: #e7505a;
+}
+
+.dashboard .col-md-3:nth-child(3) .dashboard-modules {
+  background-color: #54c5d2;
+}
+
+.dashboard .col-md-3:nth-child(4) .dashboard-modules {
+  background-color: #8d45ad;
+}
+
+.dashboard .col-md-3 .dashboard-modules {
+  position: relative;
+  box-shadow: 0 1px 15px 1px rgba(62, 57, 107, .07);
+  -webkit-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.dashboard .col-md-3 .dashboard-modules:hover {
+  -webkit-transform: translateY(-4px) scale(1.02);
+  -moz-transform: translateY(-4px) scale(1.02);
+  -ms-transform: translateY(-4px) scale(1.02);
+  -o-transform: translateY(-4px) scale(1.02);
+  transform: translateY(-4px) scale(1.02);
+  -webkit-box-shadow: 0 14px 24px rgba(62, 57, 107, .2);
+  box-shadow: 0 14px 24px rgba(62, 57, 107, .2);
+}
+
+.dashboard .col-md-3 .view-info {
+  color: #fff;
+  position: absolute;
+  padding: 5px;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dashboard .col-md-3:nth-child(1) .view-info {
+  background-color: #2b87c7;
+}
+
+.dashboard .col-md-3:nth-child(2) .view-info {
+  background-color: #cb3d46;
+}
+
+.dashboard .col-md-3:nth-child(3) .view-info {
+  background-color: #42aeba;
+}
+
+.dashboard .col-md-3:nth-child(4) .view-info {
+  background-color: #793598;
+}
+
+.module-title {
+  display: block;
+  font-size: 30px;
+  color: #FFF;
+  font-weight: 300;
+  padding: 50px 20px 70px 20px;
+  cursor: pointer;
+  &:hover {
+      text-decoration: none
+  }
+}
+
+.collapse.in {
+  -webkit-transition: all .2s cubic-bezier(.4, 0, .2, 1) 0s;
+  -moz-transition: all .2s cubic-bezier(.4, 0, .2, 1) 0s;
+  -o-transition: all .2s cubic-bezier(.4, 0, .2, 1) 0s;
+  transition: all .2s cubic-bezier(.4, 0, .2, 1) 0s;
+}

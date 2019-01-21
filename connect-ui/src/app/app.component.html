@@ -1,0 +1,16 @@
+<app-header *ngIf="isLoggedIn$"></app-header>
+<div class="container-fluid" class="innter-panel-top" *ngIf="!isLoggedIn$">
+  <div class="col-md-12">
+    <router-outlet *ngIf="!isLoggedIn$"></router-outlet>
+  </div>
+</div>
+<div class="container-fluid" class="innter-panel-top" *ngIf="isLoggedIn$">
+  <div class="col-md-2">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-md-10" >
+    <div>
+      <router-outlet *ngIf="isLoggedIn$"></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<table class="mybox-table" [mfData]="data " #mf="mfDataTable" [mfRowsOnPage]="5" (mfSelectedEntities)="setSelectedEntities($event)">
+    <thead>
+        <tr>
+            <th>
+                <mfRowSelectorHead></mfRowSelectorHead>
+            </th>
+            <th *ngFor="let column of displayedColumns">{{column}}</th>
+            <!-- <th>Box ID</th>
+            <th>Chip ID</th>
+            <th>Card ID</th>
+            <th>Model</th>
+            <th>CAS</th>
+            <th>Factory</th>
+            <th>Operator</th>
+            <th>Status</th>
+            <th>Connected</th>
+            <th>Edit</th> -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let device of data">
+            <td>
+                <mfRowSelector [entity]="device" [checkboxId]="ndx"></mfRowSelector>
+            </td>
+            <td *ngFor="let row of defColumns">
+              <span *ngIf="isObj(row)">{{device[row?.name][row?.value]}}</span>
+              <span *ngIf="isStr(row)" [ngClass]="getUnitCountCellColor(row,device)">{{device[row]}}</span>
+            </td>
+            <!-- <td><a (click)="getDetailsdofDevice(device.deviceId)" style="cursor: pointer;">{{device.boxId}}</a></td> -->
+            <!-- <td>{{device.position}}</td> -->
+            <!-- <td>{{device.name}}</td> -->
+            <!-- <td>{{device.model?.modelName}}</td>
+            <td>{{device.cas?.casName}}</td>
+            <td>{{device.factory?.name}}</td>
+            <td>{{device.operator?.name}}</td> -->
+            <!-- <td><span [ngClass]="(device.status === 'Active')?'device-active':'device-inactive'">{{device.status}}</span></td>
+            <td><span [ngClass]="(device.connectedStatus === 'online')?'device-online':'device-offline'">{{device.connectedStatus}}</span></td>
+            <td><button [disabled]="update" class="updatebutton" (click)="deviceEdit(device.deviceId)"><span class="glyphicon glyphicon-pencil" style="color:#5cb85c;"></span></button></td> -->
+        </tr>
+        <tr *ngIf="data.length == 0;">
+            <td colspan="12">
+                <div class="text-center">No Data Found</div>
+            </td>
+        </tr>
+    </tbody>
+    <!-- <tfoot *ngIf="data.length != 0">
+        <tr>
+            <td colspan="11">
+                <pagination-controls class="pull-right" (pageChange)="pageChanged(page = $event)" maxSize="9" directionLinks="true" responsive="true" previousLabel="Previous" nextLabel="Next">
+                </pagination-controls>
+            </td>
+        </tr>
+    </tfoot> -->
+</table>
