@@ -20,11 +20,10 @@ export class DevicesComponent implements OnInit {
   constructor(private appState: Store<AppState>) {}
 
   ngOnInit() {
-    this.appState.dispatch(new DeviceLoad()); // Dispatching Project Load Action to update projects state
+    this.appState.dispatch(new DeviceLoad()); // Dispatching Device Load Action to update devices state
     this.devices$.subscribe((state) => {
       if (state) {
-        this.devices = state.device; // Assigning projects state to @input project
-        console.log(this.devices);
+        this.devices = state.device; // Assigning devices state to @input project
       }
     });
   }

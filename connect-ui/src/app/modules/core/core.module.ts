@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from 'src/app/state/effects/auth.effects';
 import { DeviceEffects } from 'src/app/state/effects/devices.effects';
+import { ModelEffects } from 'src/app/state/effects/model.effects';
 // import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
@@ -19,7 +20,7 @@ import { DeviceEffects } from 'src/app/state/effects/devices.effects';
     CoreRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([AuthEffects,DeviceEffects]),
+    EffectsModule.forRoot([AuthEffects,DeviceEffects,ModelEffects]),
   ],
   
   exports: [
